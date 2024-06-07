@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="/Projeto-pwnb/assets/logo.png" type="image/x-icon">
+    <script type="module" src="/Projeto-pwnb/lib/lib.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="index.js"></script>
+    <title>DataScript Analytics</title>
+</head>
+<body>
+    <wc-header user="Luigi da silva coelho"></wc-header>
+    <div>
+        <wc-menu></wc-menu>
+        <wc-content titleContent="Análise Exploratória de Dados">
+            <div id="grafico-barras" style="margin: 1em; max-width: 95%; height: 26em"></div>
+            <div id="grafico-torta" style="margin: 1em; max-width: 95%; height: 26em"></div>
+        </wc-content>
+    </div>
+    <wc-footer></wc-footer>
+    <script>
+        setTimeout(() => {
+            const vendas = JSON.parse(localStorage.getItem("vendas"));
+            if (vendas == null) {
+                alert('Não há dados a serem analisados, insira na tela de importação de dados');   
+            }
+        }, 200);
+    </script>
+    <!-- Gráfico de barras -->
+    <script>
+        google.charts.load('current',{packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        // Your Function
+        function drawChart() {
+            const data = google.visualization.arrayToDataTable(carregarDados("valor"));
+            
+            // Set Options
+            const options = {
+                title: 'Valor total de vendas por produto',
+            };
+            
+            // Draw
+            const chart = new google.visualization.BarChart(document.getElementById('grafico-barras'));
+            chart.draw(data, options);
+        }
+    </script>
+    
+    <!-- Gráfico de torta 3D -->
+    <script>
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+            // Set Data
+            const data = google.visualization.arrayToDataTable(carregarDados("quantidade"));
+            console.log(data);
+            // Set Options
+            const options = {
+                title:'Quantidade de produtos vendidos',
+                is3D:true
+            };
+            
+            // Draw
+            const chart = new google.visualization.PieChart(document.getElementById('grafico-torta'));
+            chart.draw(data, options);    
+        }
+    </script>
+</body>
+</html>

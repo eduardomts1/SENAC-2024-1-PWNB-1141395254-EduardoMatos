@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="/Projeto-pwnb/assets/logo.png" type="image/x-icon">
+    <script type="module" src="/Projeto-pwnb/lib/lib.js"></script>
+    <title>DataScript Analytics</title>
+</head>
+<body>
+    <wc-header user="Luigi da silva coelho"></wc-header>
+    <div>
+        <wc-menu></wc-menu>
+        <wc-content titleContent="Análise Descritiva">
+            <wc-table></wc-table>
+        </wc-content>
+    </div>
+    <script>
+        setTimeout(() => {
+            const vendas = JSON.parse(localStorage.getItem("vendas"));
+            if (vendas == null) {
+                alert('Não há dados a serem analisados, insira na tela de importação de dados');   
+            }
+        }, 200);
+    </script>
+    <wc-footer></wc-footer>
+</body>
+</html>

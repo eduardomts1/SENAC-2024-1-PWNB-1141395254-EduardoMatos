@@ -1,0 +1,23 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    height: 85.1vh;
+}
+
+#grafico-torta > div {
+    height: 20em;
+}
+
+@media(max-width: 1366px) {
+    div {
+        height: 84.1vh;
+    }
+}

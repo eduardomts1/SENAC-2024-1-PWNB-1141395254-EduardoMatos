@@ -1,0 +1,83 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    height: 85.1vh;
+}
+
+.container-inputs {
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+    margin: 2em 0em 0em 2em;
+}
+
+.container-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    width: 30em;
+    height: 3em;
+    
+    margin: 1em 0em 0em 0em;
+}
+
+button {
+    background-color: #4169E1;
+    font-weight: bold;
+    color: #f2f2f2;
+
+    height: 2.5em;
+    width: 10em;
+    margin-right: 1em;
+
+    border: none;
+    border-radius: 0.5em;
+}
+
+button:hover {
+    background-color: #537eff;
+    cursor: pointer;
+}
+
+.termo-dados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    height: 28em;
+    width: 50%;
+}
+
+img {
+    height: 10em;
+    width: 10em;
+}
+
+h1 {
+    color: #ff3a3a;
+}
+
+p {
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    color: #363636;
+    margin: 0px;
+}
+
+@media(max-width: 1366px) {
+    div {
+        height: 84.1vh;
+    }
+}

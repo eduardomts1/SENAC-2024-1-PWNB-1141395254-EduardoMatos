@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="/Projeto-pwnb/assets/logo.png" type="image/x-icon">
+    <script type="module" src="/Projeto-pwnb/lib/lib.js"></script>
+    <script src="./index.js"></script>
+    <title>DataScript Analytics</title>
+</head>
+<body>
+    <wc-header user="Luigi da silva coelho"></wc-header>
+    <div>
+        <wc-menu></wc-menu>
+        <wc-content css="display: flex; flex-direction: row" titleContent="Importação de Dados">
+            <form id="formulario" class="container-inputs">
+                <wc-input name="cliente"    campo="Nome do cliente"    type="" min="0"></wc-input>
+                <wc-input name="produto"    campo="Nome do produto"    type=""></wc-input>
+                <wc-input name="empresa"    campo="Nome da empresa"    type=""></wc-input>
+                <wc-input name="qtdVenda"   campo="Quantidade vendida" type="number"></wc-input>
+                <wc-input name="valorTotal" campo="Valor"              type="number" min="0" max="100000"></wc-input>
+                <wc-input name="dataVenda"  campo="Data da venda"      type="date"></wc-input>
+                <div class="container-buttons">
+                    <button name="importar"> Importar </button>
+                    <button name="cancelar"> Cancelar </button>
+                </div>
+            </form>
+            <div class="termo-dados">
+                <img src="/Projeto-pwnb/assets/logo.png" alt="logo empresa" />
+                <h1>Atenção</h1>
+                <p>Ao inserir os dados, automaticamente você concorda que temos total liberdade para trabalharmos com eles.</p>
+            </div>
+            <script>
+                document.getElementById('formulario').addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    var botaoSelecionado = document.activeElement;
+                    if (botaoSelecionado.name == "importar") {
+                        importar();
+                    } else {
+                        limpar();
+                    }
+                });
+            </script>
+        </wc-content>
+    </div>
+    <wc-footer></wc-footer>
+</body>
+</html>

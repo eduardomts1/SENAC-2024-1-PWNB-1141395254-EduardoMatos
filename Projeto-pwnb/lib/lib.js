@@ -1,0 +1,21 @@
+import { Header } from "./components/header.js";
+import { Menu } from "./components/menu.js";
+import { Content } from "./components/content.js";
+import { Footer } from "./components/footer.js";
+import { LabelInput } from "./components/input.js";
+import { LayoutLogin } from "./components/layoutLogin.js";
+import { Table } from "./components/table.js";
+import { PartePretaLogin } from "./components/partePretaLogin.js";
+import { ParteBrancaLogin } from "./components/parteBrancaLogin.js";
+import { InputLabel } from "./components/inputLabel.js";
+
+customElements.define("wc-header", Header);
+customElements.define("wc-menu", Menu);
+customElements.define("wc-content", Content);
+customElements.define("wc-footer", Footer);
+customElements.define("wc-input", LabelInput);
+customElements.define("wc-layoutlogin", LayoutLogin);
+customElements.define("wc-table", Table);
+customElements.define("wc-parte-preta-login", PartePretaLogin);
+customElements.define("wc-parte-branca-login", ParteBrancaLogin);
+customElements.define("wc-input-label", InputLabel);
